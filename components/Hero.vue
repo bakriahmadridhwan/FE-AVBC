@@ -54,7 +54,9 @@
                 shadow-white shadow-sm
                 font-bold
               "
-              ><span class="animate-pulse">Daftar Sekarang!</span></NuxtLink
+              >
+              <span class="animate-pulse">{{ !buttonRegister.open ? buttonRegister.msg : 'Daftar Sekarang!' }}</span>
+              </NuxtLink
             >
             <NuxtLink
               to="#contact"
@@ -92,3 +94,33 @@
 
   <!-- Hero Section End -->
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      buttonRegister: {
+        open: false,
+        msg: null
+      },
+    };
+  },
+  mounted() {
+    this.cekHariPendaftaran();
+  },
+  methods: {
+    cekHariPendaftaran() {
+      const that = this;
+      this.$axios
+        .get("public/hari-pendaftaran")
+        .then(({ data }) => {
+          this.buttonRegister.open = data.data.open;
+          this.buttonRegister.msg = data.message
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+};
+</script>

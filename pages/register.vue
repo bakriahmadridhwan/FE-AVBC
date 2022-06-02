@@ -202,6 +202,27 @@
   </section>
 </template>
 
-<style></style>
-<script></script>
-  ``
+<script>
+export default {
+  mounted() {
+    this.cekHariPendaftaran()
+  },
+  methods: {
+    cekHariPendaftaran() {
+      const that = this
+      this.$axios
+        .get("public/hari-pendaftaran")
+        .then(({data}) => {
+          const msg = data.message
+          if (!data.data.open) {
+            alert(msg)
+            that.$router.replace('/login')
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+};
+</script>
