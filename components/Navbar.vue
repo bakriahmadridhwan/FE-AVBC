@@ -151,8 +151,8 @@
                 </div>
               </li>
               <li class="group">
-                <a
-                  href="#home"
+                <NuxtLink
+                  to="/faqs"
                   class="
                     text-base text-white
                     py-2
@@ -161,7 +161,7 @@
                     group-hover:text-primary
                     dark:text-white
                   "
-                  >FAQS</a
+                  >FAQS</NuxtLink
                 >
               </li>
               <li class="group">

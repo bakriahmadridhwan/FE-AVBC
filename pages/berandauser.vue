@@ -1,13 +1,31 @@
 <template>
-  <div class="">
-    <div class="column">
-      <div class="bg-pink-500">
-        <div class="fixed">satu</div>
-      </div>
-      <div class="bg-green-500">
-        <div class=""></div>
-      </div>
-      <div class="bg-sky-500">03</div>
+  <div class="bg-sky-400 rounded-lg mt-12 flex mx-auto">
+    <div>
+      <h1 class="text-center uppercase font-semibold text-white flex mx-auto items-center">{{ data }}</h1>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      data: null
+    }
+  },
+  mounted() {
+    this.df();
+  }, 
+  methods: {
+    df() {
+      const that = this
+      this.$axios.get('/public/hari-pendaftaran').then(({data}) => {
+        this.data = data.data.judul
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+  }
+};
+</script>

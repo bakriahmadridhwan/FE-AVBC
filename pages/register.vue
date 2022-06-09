@@ -171,17 +171,7 @@
 
               <div>
                 <button
-                  class="
-                    py-2
-                    px-4
-                    bg-primary
-                    text-white
-                    font-bold
-                    w-full
-                    mx-auto
-                    rounded-xl
-                    my-4
-                  "
+                  class="py-2 px-4 bg-primary text-white font-bold w-full mx-auto rounded-xl my-4"
                 >
                   Login
                 </button>
@@ -205,18 +195,18 @@
 <script>
 export default {
   mounted() {
-    this.cekHariPendaftaran()
+    this.cekHariPendaftaran();
   },
   methods: {
     cekHariPendaftaran() {
-      const that = this
+      const that = this;
       this.$axios
         .get("public/hari-pendaftaran")
-        .then(({data}) => {
-          const msg = data.message
+        .then(({ data }) => {
+          const msg = data.message;
           if (!data.data.open) {
-            alert(msg)
-            that.$router.replace('/login')
+            alert(msg);
+            that.$router.replace("/register");
           }
         })
         .catch((err) => {

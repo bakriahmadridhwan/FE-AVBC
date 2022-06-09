@@ -41,7 +41,6 @@
               to="/register"
               class="
                 text-base
-                font-semibold
                 text-white
                 bg-primary
                 py-3

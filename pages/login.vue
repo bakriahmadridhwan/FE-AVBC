@@ -1,14 +1,7 @@
 <template>
   <section id="formLogin" class="formLogin">
     <div
-      class="
-        columns-1
-        sm:columns-1
-        md:columns-1
-        lg:columns-2
-        xl:columns-2
-        bg-slate-50
-      "
+      class="columns-1 sm:columns-1 md:columns-1 lg:columns-2 xl:columns-2 bg-slate-50"
     >
       <div class="flex justify-center items-center h-screen w-full">
         <div class="flex items-center">
@@ -46,24 +39,14 @@
 
                 <div>
                   <button
-                    class="
-                      py-2
-                      px-4
-                      bg-primary
-                      text-white
-                      font-bold
-                      w-full
-                      mx-auto
-                      rounded-xl
-                      my-4
-                    "
+                    class="py-2 px-4 bg-primary text-white font-bold w-full mx-auto rounded-xl my-4"
                   >
                     Login
                   </button>
                   <div class="text-center">
                     <p>
                       belum punya akun?
-                      <NuxtLink to="/register">Daftar!</NuxtLink>
+                      <NuxtLink to="/auth/register">Daftar!</NuxtLink>
                     </p>
 
                     <NuxtLink to="/login">Halaman Utama</NuxtLink>
