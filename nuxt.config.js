@@ -10,38 +10,38 @@ export default {
       lang: "en",
     },
     meta: [{
-        charset: "utf-8",
-      },
-      {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-      },
-      {
-        hid: "description",
-        name: "description",
-        content: "Nuxt.js project",
-      },
-      {
-        name: "format-detection",
-        content: "telephone=no",
-      },
-      // example vue-meta
-      {
-        hid: "title",
-        name: "title",
-        content: "Nuxt.js project",
-      },
+      charset: "utf-8",
+    },
+    {
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
+    },
+    {
+      hid: "description",
+      name: "description",
+      content: "Nuxt.js project",
+    },
+    {
+      name: "format-detection",
+      content: "telephone=no",
+    },
+    // example vue-meta
+    {
+      hid: "title",
+      name: "title",
+      content: "Nuxt.js project",
+    },
     ],
     link: [{
-        rel: "icon",
-        type: "image/x-icon",
-        href: "/logo.png",
-      },
-      {
-        rel: "stylesheet",
-        type: "text/css",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css",
-      },
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/logo.png",
+    },
+    {
+      rel: "stylesheet",
+      type: "text/css",
+      href: "https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css",
+    },
     ],
   },
 
@@ -65,7 +65,21 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    '@nuxtjs/toast',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }],
+
   ],
+
+  toast: {
+    position: 'bottom-right',
+    duration: 3000,
+    action: {
+      text: "OK",
+      onClick: (e, toastObject) => {
+        toastObject.goAway(0);
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
