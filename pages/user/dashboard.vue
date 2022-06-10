@@ -52,6 +52,7 @@
             py-4
             px-2
           "
+          :class="showProfileMobile && 'bg-purple-800'"
         >
           PROFILE
         </div>
@@ -74,6 +75,7 @@
             py-4
             px-2
           "
+          :class="showDashboardMobile && 'bg-purple-800'"
         >
           DASHBOARD
         </div>
@@ -96,6 +98,7 @@
             py-4
             px-2
           "
+          :class="showAngkatanMobile && 'bg-purple-800'"
         >
           ANGKATAN
         </div>
@@ -110,7 +113,7 @@ export default {
   data() {
     return {
       showProfileMobile: false,
-      showDashboardMobile: false,
+      showDashboardMobile: true,
       showAngkatanMobile: false,
     };
   },
