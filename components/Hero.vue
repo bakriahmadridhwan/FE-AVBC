@@ -37,11 +37,10 @@
           </p>
 
           <div class="flex">
-            <NuxtLink
-              to="/register"
+            <button
+              @click="registerCheck"
               class="
-                text-base
-                text-white
+                text-base text-white
                 bg-primary
                 py-3
                 px-8
@@ -53,10 +52,9 @@
                 shadow-white shadow-sm
                 font-bold
               "
-              >
-              <span class="animate-pulse">{{ !buttonRegister.open ? buttonRegister.msg : 'Daftar Sekarang!' }}</span>
-              </NuxtLink
             >
+              <span class="animate-pulse">Daftar Sekarang!</span>
+            </button>
             <NuxtLink
               to="#contact"
               class="
@@ -100,24 +98,24 @@ export default {
     return {
       buttonRegister: {
         open: false,
-        msg: null
+        msg: null,
       },
     };
   },
-  mounted() {
-    this.cekHariPendaftaran();
-  },
   methods: {
-    cekHariPendaftaran() {
+    registerCheck() {
       const that = this;
       this.$axios
         .get("public/hari-pendaftaran")
         .then(({ data }) => {
-          this.buttonRegister.open = data.data.open;
-          this.buttonRegister.msg = data.message
+          if (data.data.open) {
+            this.$router.push('/register')
+          }else{
+            this.$toast.error(data.message)
+          }
         })
-        .catch((err) => {
-          console.log(err);
+        .catch(({response}) => {
+            this.$toast.error(response.data.message)
         });
     },
   },

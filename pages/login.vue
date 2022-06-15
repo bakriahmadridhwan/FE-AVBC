@@ -59,7 +59,7 @@
                     :disabled="buttonLoading"
                     @click="onLogin"
                     class="
-                      py-2
+                      py-3
                       px-4
                       text-white
                       font-bold
@@ -70,7 +70,10 @@
                     "
                     :class="buttonLoading ? 'bg-gray-800' : 'bg-primary'"
                   >
-                    {{ buttonLoading ? "Loading . . ." : "Login" }}
+                    <div class="flex justify-center items-center" v-if="buttonLoading">
+                      <Spinner />
+                    </div>
+                    <div v-else>Login</div>
                   </button>
                   <div class="text-center">
                     <p>
@@ -120,7 +123,13 @@ export default {
       buttonLoading: false,
     };
   },
+  mounted() {
+    this.validateLogin()
+  },
   methods: {
+    validateLogin() {
+      this.$cookiz.get('authToken') && this.$router.replace('/user/dashboard')
+    },
     onLogin() {
       let raw = {
         email: this.email,

@@ -4,11 +4,16 @@
       <Spinner />
     </div>
     <div v-else class="flex justify-center items-center flex-col">
-      <div class="aspect-square rounded-full shadow-md overflow-hidden w-1/2">
+      <div @click="changePhotoProfile" class="aspect-square rounded-full shadow-md overflow-hidden w-1/2 hover:opacity-80 cursor-pointer">
         <img
+          v-if="!credentials.pengguna_detail.foto"
           class="w-full h-full object-cover"
-          src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1578620671/wwa6sd5wyp1wxjrder5i.png"
-          alt=""
+          src="~/assets/icon/user.png"
+        />
+        <img
+          v-else
+          :src="credentials.pengguna_detail.foto"
+          class="w-full h-full object-cover"
         />
       </div>
       <div class="text-lg text-center font-bold mt-2">
@@ -28,8 +33,7 @@
         <button
           @click="goToGroupWa"
           class="
-            hover:opacity-80
-            hover:shadow-green-200
+            hover:opacity-80 hover:shadow-green-200
             bg-green-600
             rounded-lg
             px-4
@@ -111,6 +115,9 @@ export default {
     this.getWaGroup();
   },
   methods: {
+    changePhotoProfile() {
+      console.log("change photo");
+    },  
     getWaGroup() {
       this.wa.loading = true;
       this.$axios
@@ -125,7 +132,7 @@ export default {
         });
     },
     goToGroupWa() {
-        window.open(this.wa.data, '_blank')
+      window.open(this.wa.data, "_blank");
     },
     getCredentials() {
       const user = this.$cookiz.get("user");
