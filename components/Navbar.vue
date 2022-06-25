@@ -1,9 +1,7 @@
 <template>
   <!-- Navbar Start -->
 
-  <header
-    class="bg-nav absolute top-0 left-0 w-full flex items-center z-10"
-  >
+  <header class="bg-nav absolute top-0 left-0 w-full flex items-center z-10">
     <img
       src="~/static/logo.png"
       alt="avbc"
@@ -23,43 +21,24 @@
         </div>
 
         <div class="flex items-center px-4">
-          <button
-            id="hamburger"
-            name="hamburger"
-            class="absolute block right-4 lg:hidden"
-            type="button"
-          >
-            <span
+            <NuxtLink
+              to="/login"
               class="
-                hamburger-line
+              md:hidden
+                text-base text-white
+                py-2
+                mx-8
+                flex
+                group-hover:scale-110 group-hover:shadow-primary
                 transition
-                duration-500
-                ease-in-out
-                origin-top-left
+                duration-300
+                dark:text-white
+                bg-primary
+                btnLogin
+                tracking-wide
               "
-            ></span>
-            <span
-              class="
-                w-5
-                h-0.5
-                my-2
-                block
-                bg-white
-                transition
-                duration-500
-                ease-in-out
-              "
-            ></span>
-            <span
-              class="
-                hamburger-line
-                transition
-                duration-500
-                ease-in-out
-                origin-bottom-left
-              "
-            ></span>
-          </button>
+              >LOGIN</NuxtLink
+            >
 
           <nav
             id="nav-menu"
