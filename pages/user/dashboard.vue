@@ -11,10 +11,10 @@
         <div class="md:hidden pb-10" v-else-if="showAngkatanMobile">
           <CAngkatan />
         </div>
-        <div class="md:hidden pb-10 h-screen" v-else>
+        <div class="md:hidden pb-10 overflow-scroll h-screen" v-else>
           <CInfo />
         </div>
-        <div class="hidden md:block">
+        <div class="hidden md:block overflow-scroll h-screen">
           <CInfo />
         </div>
       </div>

@@ -64,14 +64,12 @@
         </div>
 
         <div class="w-full px-4 mb-12 md:w-1/3">
-          <h3 class="font-semibold text-xl text-white mb-2 font-bold">
-            Tautan
-          </h3>
+          <h3 class="font-semibold text-xl text-white mb-2">Tautan</h3>
           <div class="h-1 w-1/4 bg-primary mb-6"></div>
           <ul class="text-slate-300">
             <li>
-              <a
-                href="#faqs"
+              <NuxtLink
+                to="/login"
                 class="
                   inline-block
                   text-base
@@ -79,12 +77,12 @@
                   mb-3
                   text-gray-200
                 "
-                >Faqs</a
+                >Login</NuxtLink
               >
             </li>
             <li>
-              <a
-                href="#login"
+              <NuxtLink
+                to="/register"
                 class="
                   inline-block
                   text-base
@@ -92,20 +90,7 @@
                   mb-3
                   text-gray-200
                 "
-                >Login</a
-              >
-            </li>
-            <li>
-              <a
-                href="#register"
-                class="
-                  inline-block
-                  text-base
-                  hover:text-primary
-                  mb-3
-                  text-gray-200
-                "
-                >Daftar Sekarang!</a
+                >Daftar Sekarang!</NuxtLink
               >
             </li>
             <li>
@@ -132,19 +117,6 @@
                   text-gray-200
                 "
                 >Tentang</a
-              >
-            </li>
-            <li>
-              <a
-                href="#contact"
-                class="
-                  inline-block
-                  text-base
-                  hover:text-primary
-                  mb-3
-                  text-gray-200
-                "
-                >Kontak</a
               >
             </li>
             <li>

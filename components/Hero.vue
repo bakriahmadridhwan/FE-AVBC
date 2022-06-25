@@ -1,7 +1,7 @@
 <template>
   <!-- Hero Section Start -->
 
-  <section id="home" class="pt-36 bg-nav dark:bg-slate-800">
+  <section id="home" class="pt-10 bg-nav dark:bg-slate-800">
     <div class="container">
       <div class="flex flex-wrap">
         <div class="w-full self-center px-4 lg:w-1/2">
@@ -16,7 +16,8 @@
                 lg:text-5xl
                 dark:text-white
               "
-              >AMIKOM VOLLEYBALL CLUB</span
+              >AMIKOM VOLLEYBALL CLUB
+              </span
             >
           </h1>
           <h2 class="font-medium text-tri text-lg mb-5 lg:text-2xl">
@@ -55,24 +56,6 @@
             >
               <span class="animate-pulse">Daftar Sekarang!</span>
             </button>
-            <NuxtLink
-              to="#contact"
-              class="
-                text-base
-                font-semibold
-                text-white
-                shadow-white shadow-sm
-                py-3
-                px-8
-                mx-2
-                rounded-full
-                hover:shadow-md hover:shadow-white
-                transition
-                duration-300
-                ease-in-out
-              "
-              >Hubungi Kami</NuxtLink
-            >
           </div>
         </div>
 

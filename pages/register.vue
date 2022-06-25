@@ -52,7 +52,7 @@
               </div>
 
               <div>
-                <label for="no_telp">Nomor Telfon</label>
+                <label for="no_telp">Nomor Telpon</label>
                 <br />
                 <input
                   type="number"
@@ -205,14 +205,6 @@
                   </div>
                   <div v-else>Register</div>
                 </button>
-                <div class="text-center">
-                  <p>
-                    sudah punya akun?
-                    <NuxtLink to="/login">Daftar!</NuxtLink>
-                  </p>
-
-                  <NuxtLink to="/">Halaman Utama</NuxtLink>
-                </div>
               </div>
             </form>
           </div>
@@ -250,6 +242,7 @@ export default {
       loadingRegister: false,
     };
   },
+  layout: 'auth',
   mounted() {
     this.cekHariPendaftaran();
     this.getJurusan();
@@ -308,14 +301,13 @@ export default {
         });
     },
     cekHariPendaftaran() {
-      const that = this;
       this.$axios
         .get("public/hari-pendaftaran")
         .then(({ data }) => {
           const msg = data.message;
           if (!data.data.open) {
             this.$toast.error(msg);
-            that.$router.replace("/register");
+            this.$router.replace("/login");
           }
           this.form.angkatan_id = data.data.angkatan_id;
         })

@@ -80,7 +80,7 @@
                       belum punya akun?
                       <NuxtLink
                         class="font-semibold text-red-800"
-                        to="/auth/register"
+                        to="/register"
                         >Daftar!</NuxtLink
                       >
                     </p>
@@ -116,6 +116,7 @@
 
 <script>
 export default {
+  layout: 'auth',
   data() {
     return {
       email: null,

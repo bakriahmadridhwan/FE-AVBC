@@ -1,13 +1,15 @@
 <template>
   <div>
-      <Nuxt />
+    <Navbar />
+    <Nuxt />
+    <Foo />
   </div>
 </template>
 
 <script>
 export default {
-    mounted() {
-        console.log("BIsaaaa looo");
-    }
-}
+  mounted() {
+    console.log("BIsaaaa looo");
+  },
+};
 </script>

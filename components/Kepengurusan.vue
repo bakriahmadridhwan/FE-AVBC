@@ -29,6 +29,7 @@
         </div>
 
         <div
+        v-if="kepengurusan"
           class="
             w-full
             px-4
@@ -53,7 +54,7 @@
             "
           >
             <img
-              src="~/static/avbc/ari.jpg"
+              src="~/static/avbc/empty.png"
               alt="Ahmad Muchari"
               width="50"
               height="50"
@@ -74,7 +75,7 @@
                 dark:text-white
               "
             >
-              <b>Ketua</b><br />Ahmad Muchari
+              <b>Ketua</b><br />{{ kepengurusan.ketua ? kepengurusan.ketua.user.name : '-' }}
             </p>
           </div>
 
@@ -107,7 +108,7 @@
                 dark:text-white
               "
             >
-              <b>Wakil Ketua</b><br />Coming soon ...
+              <b>Wakil Ketua</b><br />{{ kepengurusan.wakil ? kepengurusan.wakil.user.name : '-' }}
             </p>
           </div>
 
@@ -140,7 +141,7 @@
                 dark:text-white
               "
             >
-              <b>Sekretaris</b><br />Coming soon ...
+              <b>Sekretaris</b><br />{{ kepengurusan.sekretaris ? kepengurusan.sekretaris.user.name : '-' }}
             </p>
           </div>
 
@@ -173,7 +174,7 @@
                 dark:text-white
               "
             >
-              <b>Bendahara</b><br />Coming soon ...
+              <b>Bendahara</b><br />{{ kepengurusan.bendahara ? kepengurusan.bendahara.user.name : '-' }}
             </p>
           </div>
         </div>
@@ -183,3 +184,25 @@
 
   <!-- Kepengurusan Section End -->
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      kepengurusan: null
+    }
+  },
+  mounted() {
+    this.getKepengurusan()
+  },
+  methods: {
+    getKepengurusan(){
+      this.$axios.get('public/jabatan').then(({data}) => {
+        this.kepengurusan = data.data
+      }).catch(({response}) => {
+        this.$toast.error(response.data.message)
+      })
+    }
+  }
+}
+</script>

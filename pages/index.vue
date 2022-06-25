@@ -2,7 +2,6 @@
   <!-- <Tutorial/> -->
 
   <main>
-    <Navbar />
     <Hero />
     <About />
     <div class="w-full bg-primary h-2"></div>
@@ -10,9 +9,7 @@
     <Kepengurusan />
     <Motto />
     <Galeri />
-    <Kontak />
     <div class="w-full bg-primary h-2"></div>
-    <Foo />
     <!-- <Bootstrap /> -->
 
     <!-- floating button ~ back to top -->

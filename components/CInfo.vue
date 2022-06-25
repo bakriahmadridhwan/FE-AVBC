@@ -9,11 +9,11 @@
         <Spinner />
       </div>
       <div v-else>
-        <div v-if="kegiatan.data">
+        <div class="pb-14" v-if="kegiatan.data">
           <div
             v-for="(item, i) in kegiatan.data"
             :key="'kegiatan_' + i"
-            class="w-full bg-white rounded-xl shadow-md py-2"
+            class="w-full bg-white rounded-xl shadow-md py-2 mb-4"
           >
             <div
               class="
@@ -94,11 +94,11 @@
         <Spinner />
       </div>
       <div v-else>
-        <div v-if="info.data">
+        <div class="pb-14" v-if="info.data">
           <div
             v-for="(item, i) in info.data"
             :key="'info_' + i"
-            class="w-full bg-white rounded-xl shadow-md py-2"
+            class="w-full bg-white rounded-xl shadow-md py-2 mb-4"
           >
             <div
               class="
