@@ -31,9 +31,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/1.jpg">
+            <a href="/avbc/1.jpg">
               <img
-                src="~/static/avbc/1.jpg"
+                src="/avbc/1.jpg"
                 alt="avbc"
                 class="
                   w-full
@@ -52,9 +52,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/2.jpg">
+            <a href="/avbc/2.jpg">
               <img
-                src="~/static/avbc/2.jpg"
+                src="/avbc/2.jpg"
                 alt="avbc"
                 class="
                   w-full
@@ -73,9 +73,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/3.jpg">
+            <a href="/avbc/3.jpg">
               <img
-                src="~/static/avbc/3.jpg"
+                src="/avbc/3.jpg"
                 alt="avbc"
                 class="
                   w-full
@@ -94,9 +94,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/7.jpeg">
+            <a href="/avbc/7.jpeg">
               <img
-                src="~/static/avbc/7.jpeg"
+                src="/avbc/7.jpeg"
                 alt="avbc"
                 class="
                   w-full
@@ -115,9 +115,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/5.jpg">
+            <a href="/avbc/5.jpg">
               <img
-                src="~/static/avbc/5.jpg"
+                src="/avbc/5.jpg"
                 alt="avbc"
                 class="
                   w-full
@@ -136,9 +136,9 @@
           <div
             class="bg-white shadow-xl overflow-hidden mb-10 dark:bg-slate-700"
           >
-            <a href="_nuxt/static/avbc/6.jpg"
+            <a href="/avbc/6.jpg"
               ><img
-                src="~/static/avbc/6.jpg"
+                src="/avbc/6.jpg"
                 alt="avbc"
                 class="
                   w-full
