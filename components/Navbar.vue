@@ -16,7 +16,7 @@
           <NuxtLink
             to="/"
             class="font-bold text-2xl text-white block py-6 hover:text-primary"
-            >AVBC</NuxtLink
+            >AVB</NuxtLink
           >
         </div>
 
