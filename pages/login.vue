@@ -37,6 +37,7 @@
                     type="email"
                     name="email"
                     id="email"
+                    placeholder="Masukan email anda"
                     class="form-input px-4 py-2 mb-2 rounded-lg w-full"
                   />
                 </div>
@@ -49,6 +50,7 @@
                     type="password"
                     name="password"
                     id="paassword"
+                    placeholder="Masukan password anda"
                     class="form-input px-4 py-2 mb-2 rounded-lg w-full"
                   />
                 </div>

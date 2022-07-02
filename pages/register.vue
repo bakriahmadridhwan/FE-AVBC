@@ -35,6 +35,7 @@
                 <label for="name">Nama Lengkap</label>
                 <br />
                 <input
+                  placeholder="Masukan nama lengkap anda"
                   type="text"
                   v-model="form.name"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -45,6 +46,7 @@
                 <label for="email">Email</label>
                 <br />
                 <input
+                  placeholder="Masukan email google anda"
                   type="email"
                   v-model="form.email"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -55,6 +57,7 @@
                 <label for="no_telp">Nomor Telpon</label>
                 <br />
                 <input
+                  placeholder="Masukan No. Telp contoh: 62897**********"
                   type="number"
                   v-model="form.no_telp"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -70,6 +73,7 @@
                 >
                 <br />
                 <input
+                  placeholder="Masukan password anda"
                   type="password"
                   v-model="form.password"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -80,6 +84,7 @@
                 <label for="password">Konfirmasi Password</label>
                 <br />
                 <input
+                  placeholder="Konfirmasi password baru anda"
                   type="password"
                   v-model="form.c_password"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -89,8 +94,9 @@
               <div>
                 <label for="alamat">Alamat</label>
                 <br />
-                <input
-                  type="text"
+                <textarea
+                  placeholder="Masukan alamat lengkap anda beserta Kota Asal"
+                  cols="4"
                   v-model="form.alamat"
                   class="form-input px-4 py-2 rounded-lg w-full"
                 />
@@ -126,8 +132,8 @@
                   class="form-select px-4 py-2 rounded-lg w-full"
                   v-model="jurusan.selected"
                 >
-                  <option value="" disabled selected>
-                    -- pilih jurusan --
+                  <option value="null" disabled selected>
+                    -- Pilih jurusan --
                   </option>
                   <option
                     v-for="(item, i) in jurusan.source"
@@ -145,6 +151,7 @@
                 <input
                   type="number"
                   v-model="form.nim"
+                  placeholder="Masukan NIM anda tanpa titik. contoh 19014330"
                   class="form-input px-4 py-2 rounded-lg w-full"
                 />
               </div>
@@ -156,8 +163,8 @@
                   class="form-select px-4 py-2 rounded-lg w-full"
                   v-model="posisi.selected"
                 >
-                  <option value="" class="capitalize" disabled selected>
-                    -- pilih posisi --
+                  <option value="null" disabled selected>
+                    -- Pilih posisi --
                   </option>
                   <option
                     v-for="(item, i) in posisi.source"
@@ -173,6 +180,7 @@
                 <label for="prestasi">Prestasi</label>
                 <br />
                 <input
+                  placeholder="Masukan prestasi jika ada"
                   type="text"
                   v-model="form.prestasi"
                   class="form-input px-4 py-2 rounded-lg w-full"
@@ -242,7 +250,7 @@ export default {
       loadingRegister: false,
     };
   },
-  layout: 'auth',
+  layout: "auth",
   mounted() {
     this.cekHariPendaftaran();
     this.getJurusan();
@@ -279,12 +287,11 @@ export default {
         angkatan_id: this.form.angkatan_id,
         alamat: this.form.alamat,
         jenis_kelamin: this.form.jenis_kelamin,
-        jurusan_id: this.jurusan.selected,
         nim: this.form.nim,
+        jurusan_id: this.jurusan.selected,
         posisi_id: this.posisi.selected,
         prestasi: this.form.prestasi,
       };
-      console.log(raw);
       this.loadingRegister = true;
       this.$axios
         .post("register", raw)
