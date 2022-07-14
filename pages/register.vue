@@ -245,6 +245,7 @@ export default {
         jenis_kelamin: null,
         jurusan_id: null,
         nim: null,
+        posisi_id: null,
         prestasi: null,
       },
       loadingRegister: false,
